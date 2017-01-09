@@ -5,3 +5,4 @@ class Solution(object):
         :rtype: str
         """
         return s[::-1]
+        #string[begin:end:step]
