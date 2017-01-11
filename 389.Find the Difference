@@ -1,0 +1,23 @@
+#Counter returns a dictionary.elements are keys and their counts are values.
+#>>> Counter('abcd')
+#Counter({'a': 1, 'c': 1, 'b': 1, 'd': 1})
+#>>> Counter({'red': 4, 'blue': 2})
+#Counter({'red': 4, 'blue': 2})
+#>>> Counter(cats=4, dogs=8)
+#Counter({'dogs': 8, 'cats': 4})
+#######################################
+#原本想用set operators 但如果加的那个letter是abcd中的一个，for each element set只取一个copy
+#&intersection提取共同项 {1,2,3}&{2,3,4} gives {2,3}
+#|pipeline#union合并{1,2,3}|{2,3,4} gives {1,2,3,4}
+#- difference-take all elements of the 2nd set out of the 1st set从第一个里删第二个也有的，第二个有第一个没有的别管{1,2,3}-{2,3,4} gives 1
+#symmetric difference{1,2,3}^{2,3,4} gives {1,4}
+#######################################
+from collections import Counter
+class Solution(object):
+    def findTheDifference(self, s, t):
+        """
+        :type s: str
+        :type t: str
+        :rtype: str
+        """
+        return (Counter(t)-Counter(s)).keys().pop()
