@@ -7,7 +7,8 @@ class Solution(object):
         #return [i for i in nums if nums.count(i)!=2].pop() #exceed time limit
         return (2*sum(set(nums))-sum(nums))
         
-        #alternative:不懂
+        #alternative:不懂。 由于异或运算的性质，两个相同数字的亦或等于0，而任意数字与0的亦或都等于它本身。另外，异或运算满足交换律。
+        #a ^ b = (a & !b) || (!a & b)
             #res = 0
         #for num in nums:
             #res ^= num
