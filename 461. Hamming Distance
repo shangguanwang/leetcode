@@ -1,0 +1,13 @@
+#两个整数的汉明距离是指其二进制不相等的位的个数。
+# Binary: 逢二进一 
+#十进制转二进制：一个数除以2，能整除写0，不能整除写1http://jingyan.baidu.com/article/fc07f9892e245612ffe51909.html 
+#bin(x): Convert an integer number to a binary string.
+# a^b Bitwise Exclusive Or=xor(a, b) 
+class Solution(object):
+    def hammingDistance(self, x, y):
+        """
+        :type x: int
+        :type y: int
+        :rtype: int
+        """
+        return (bin(x^y)).count('1') #注意引号
