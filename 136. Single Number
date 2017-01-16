@@ -1,0 +1,14 @@
+class Solution(object):
+    def singleNumber(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        #return [i for i in nums if nums.count(i)!=2].pop() #exceed time limit
+        return (2*sum(set(nums))-sum(nums))
+        
+        #alternative:不懂
+            #res = 0
+        #for num in nums:
+            #res ^= num
+        #return res
