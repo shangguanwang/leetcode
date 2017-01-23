@@ -1,0 +1,16 @@
+class Solution(object):
+    def guessNumber(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        #二分查找（Binary Search）
+        lo,hi=1,n  #lo=1不是0，见题干
+        while lo<=hi: #一定要有=，因为有mid=n的情况
+            mid=(lo+hi)/2 
+            if guess(mid)==1: #我的数字更高，猜更大的 #right
+                lo=mid+1
+            elif guess(mid)==-1:#我的数字更低，猜更小的 ##left
+                hi=mid-1
+            else: #正好猜中
+                return mid
