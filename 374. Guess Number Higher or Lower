@@ -7,7 +7,7 @@ class Solution(object):
         #二分查找（Binary Search）
         lo,hi=1,n  #lo=1不是0，见题干
         while lo<=hi: #一定要有=，因为有mid=n的情况
-            mid=(lo+hi)/2 
+            mid=(lo+hi)//2  #问题？要不要integer division
             if guess(mid)==1: #我的数字更高，猜更大的 #right
                 lo=mid+1
             elif guess(mid)==-1:#我的数字更低，猜更小的 ##left
