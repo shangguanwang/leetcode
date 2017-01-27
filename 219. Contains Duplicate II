@@ -1,0 +1,15 @@
+class Solution(object):
+    def containsNearbyDuplicate(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: bool
+        """
+        #enumerate(iterable/sequence)works as a counter, returns a tuple (index, value)
+        D=dict() #{value:index}
+        for i,v in enumerate(nums):
+            if v in D and i-D[v]<=k: #新index与已经在dic里的旧index
+                return True
+            D[v]=i #要放最后因为dic不能有重复的key
+        return False
+        #解题思路：使用dict保存数组中数字的下标
