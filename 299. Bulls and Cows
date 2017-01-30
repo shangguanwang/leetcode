@@ -1,0 +1,11 @@
+class Solution(object):
+    def getHint(self, secret, guess):
+        """
+        :type secret: str
+        :type guess: str
+        :rtype: str
+        """
+        from collections import Counter
+        s,g=Counter(secret),Counter(guess)
+        a=sum(i==j for i,j in zip(secret,guess)) #a=位置一样value也一样的几对数
+        return '{}A{}B'.format(a,sum((s&g).values())-a)
