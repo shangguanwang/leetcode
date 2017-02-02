@@ -11,5 +11,5 @@ class Solution(object):
             if v in D and i-D[v]<=k: #新index与已经在dic里的旧index
                 return True
             D[v]=i #要放最后因为dic不能有重复的key
-        return False
+        return False #Keep abreast of for
         #解题思路：使用dict保存数组中数字的下标
