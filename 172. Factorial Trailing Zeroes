@@ -1,3 +1,4 @@
+#Given an integer n, return the number of trailing zeroes in n! (后缀0的个数）
 class Solution(object):
     def trailingZeroes(self, n):
         """
