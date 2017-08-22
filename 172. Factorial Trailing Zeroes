@@ -24,6 +24,8 @@ class Solution(object):
 
 #n!后缀0的个数 = n!质因子中5的个数 (10不是等于2个5么-因为是factorial，所以有5必有2
               #= floor(n/5) + floor(n/25) + floor(n/125) + ....
-        #We add a trailing zero every time we multiply by 10 (5 * 2). Since we will have always more 2s than 5s, the problem is to find the number of 5s in the numbers from 1 to n.
+        #We add a trailing zero every time we multiply by 10 (5 * 2). 
+        #Since we will have always more 2s than 5s, the problem is to find the number of 5s in the numbers from 1 to n.
+        #25！会因为25多一个零：25*4 20  15*24 10* 5*2
         
 #Another way: return 0 if n < 5 else n/5 + self.trailingZeroes(n/5)
