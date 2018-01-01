@@ -1,0 +1,18 @@
+Rotate an array of n elements to the right by k steps.
+
+For example, with n = 7 and k = 3, the array [1,2,3,4,5,6,7] is rotated to [5,6,7,1,2,3,4].
+
+-------------------------------------------------------------------------------------------
+class Solution:
+    def rotate(self, nums, k):
+        """
+        :type nums: List[int]
+        :type k: int
+        :rtype: void Do not return anything, modify nums in-place instead.
+        """
+        n=len(nums)
+        nums[:]=nums[(n-k):]+nums[:(n-k)]
+        
+        #note1: nums[:] is correct instead of nums=
+        #first attempt: if k>0:                               # [1,2] 0  expect: [1,2], return[2,1]
+                           nums[:]=nums[(k+1):]+nums[0:k+1]   # [1,2] 1 expect: [2,1], return [1,2]   
